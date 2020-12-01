@@ -1,0 +1,493 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif
+}
+
+.body {
+    background-color: #373737;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// font-family: 'Montserrat', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// font-family: 'Poppins', sans-serif;
+
+
+// Responsive Sizes ---------
+
+@mixin small {
+    @media screen and(min-width:768px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media screen and(min-width:1024px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media screen and(min-width:1220px) {
+        @content;
+    }
+}
+
+// Responsive Sizes ---------
+
+
+.main-wrapper {
+    height: 100vh;
+    width: 100%;
+    .main-container {
+        width: 310px;
+        max-width: 1150px;
+        height: 615px;
+        position: relative;
+        background: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        @include small {
+        width: 560px;
+        height: 820px;
+        }
+        @include medium {
+        width: 910px;
+        height: 645px;
+        }
+        @include large {
+        height: 650px;
+        width: 1150px;
+        }
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            box-shadow: 0 0 30px rgba(0 ,0 ,0, .2);
+            flex-direction: column-reverse;
+            @include medium {
+                flex-direction: row;
+            }
+            .left-cont {
+                height: 505px;
+                width: 100%;
+                // font-family: 'Montserrat', sans-serif;
+                padding: 20px 25px;
+                @include small {
+                padding: 35px;
+                }
+                @include medium {
+                padding: 60px;
+                width: 525px;
+                height: 100%;
+                }
+                @include large {
+                width: 610px;
+                }
+                .breadcrumbs {
+                    margin-bottom: 20px;
+                    font-size: 14px;
+                    display: none;
+                    @include medium {
+                        display: block;
+                    }
+                    .breadcrumb-active {
+                        color: #aaa;
+                    }
+                }
+                .shoe-title {
+                    margin-bottom: 10px;
+                    font-size: 26px;
+                    line-height: 32px;
+                    // padding-right: 0px;
+                    font-weight: 900;
+                    letter-spacing: 1px;
+                    @include small {
+                    line-height: 50px;
+                    margin-bottom: 15px;
+                    font-size: 38px;
+                    }
+                    @include large {
+                    padding-right: 100px;
+                    line-height: 50px;
+                    padding-right: 50px;
+                    }
+                }
+                .review {
+                    display: flex;
+                    margin-bottom: 18px;
+                    @include small {
+                    margin-bottom: 30px;
+                    }
+                    .stars {
+                        svg {
+                            margin-right: 15px
+                        }
+                    }
+                    .rating {
+                        margin-right: 15px;
+                        font-size: 14px;
+                        @include small {
+                            font-size: 16px;
+                        }
+                    }
+                    .review-count{
+                        color: #aaa;
+                        font-size: 14px;
+                        @include small {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .price {
+                    display: flex;
+                    margin-bottom: 18px;
+                    @include small {
+                    margin-bottom: 30px;
+                    }
+                    .actual-price {
+                        font-size: 28px;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        margin-right: 25px;
+                        @include small {
+                        font-size: 34px;
+                        }
+                        .text-superscript {
+                            font-size: 20px;
+                        }
+                    }
+                    .non-price {
+                        text-decoration: line-through;
+                        font-size: 18px;
+                        margin-top: 12px;
+                        font-weight: 700;
+                        color: #aaa;
+                        letter-spacing: 1px;
+                        @include small {
+                        font-size: 22px;
+                        }
+                        .text-superscript-non-price {
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .product-info {
+                    color: #777;
+                    font-size: 12px;
+                    line-height: 18px;
+                    letter-spacing: 1px;
+                    margin-bottom: 18px;
+                    font-weight: 300;
+                    @include small {
+                    font-size: 16px;
+                    line-height: 22px;
+                    margin-bottom: 30px;
+                    color: #aaa;
+                    }
+                }
+                .shoe-size {
+                    display: flex;
+                    margin-bottom: 18px;
+                    flex-direction: row;
+                    align-items: center;
+                    @include small {
+                    margin-bottom: 30px;
+                    }
+                    .size-txt {
+                        margin-right: 10px;
+                        font-size: 14px;
+                        @include small {
+                        margin-right: 15px;
+                        font-size: 16px;
+                        }
+                    }
+                    .m-view-size-list {
+                        list-style: none;
+                        display: flex;
+                        font-size: 16px;
+                        @include small {
+                        font-size: 22px;
+                        }
+                        // display: block;
+                        @include medium {
+                            display: none;
+                        }
+                        .shoe-size-m-view {
+                            margin-right: 10px;
+                            background: #eee;
+                            padding: 7px 9px;
+                            border-radius: 3px;
+                            transition: .2s ease-in-out;
+                            &.active {
+                                background: linear-gradient(140deg, #f03e79 0%, #e13368 36%, #d0203d 100%);
+                                color: white;
+                            }
+                            @include small {
+                            margin-right: 20px;
+                            }
+                        }
+                    }
+                    #size-select {
+                        border: 1px solid #aaa;
+                        padding: 4px 11.5px;
+                        font-size: 14px;
+                        border-radius: 100px; display: none;
+                        @include medium {
+                            display: block;
+                        }
+                        // &.select-selected:after {
+                        //     position: absolute;
+                        //     content: "";
+                        //     top: 14px;
+                        //     right: 50px;
+                        //     width: 0;
+                        //     height: 0;
+                        //     border: 1px solid transparent;
+                        //     border-color: #fff transparent transparent transparent;
+                        //   }
+                    }
+                }
+                .buy-product {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    .ctc-cart {
+                        background: #E33469;
+                        display: inline-flex;
+                        padding: 10px 14px;
+                        flex-direction: row;
+                        align-items: center;
+                        border-radius: 100px;
+                        white-space: nowrap;
+                        transition: .2s ease-in-out;
+                        &:hover {
+                        background: #c01f4f;
+                        }
+                        @include small {
+                            white-space: normal;
+                        }
+                        cursor: pointer;
+                        margin-right: 20px;
+                        #cart-icon {
+                            margin-right: 8px;
+                        }
+                        p {
+                            letter-spacing: 1px;
+                            font-size: 12px;
+                            color: white;
+                            font-weight: 300;
+                            @include small {
+                            font-size: 14px;
+                            }
+                        }
+                    }
+                    .wishlist-btn {
+                        transition: .2s ease-in-out;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        white-space: nowrap;
+                        // border: 1px solid;
+                        // padding: 12px 8.875px;
+                        .wishlist-m-view {
+                            transition: .2s ease-in-out;
+                            display: block;
+                            border: 1px solid #e33469;
+                            padding: 5.5px 12.02px;
+                            border-radius: 100px;
+                            .m-view-heart {
+                                #m-view-heart-icon {
+                                    fill: #e33469;
+                                }
+                            }
+                            @include small {
+                                display: none;
+                            }
+                        }
+                        .heart-icon {
+                            display: none;
+                            #heart-solid {
+                                fill: #aaa;
+                            }
+                            @include small {
+                                display: block;
+                            }
+                        }
+                        &.active {
+                            .wishlist-m-view {
+                                display: block;
+                                background: #e33469;
+                                .m-view-heart {
+                                    #m-view-heart-icon {
+                                        fill: white;
+                                    }
+                                }
+                                @include small {
+                                    display: none;
+                                }
+                            }
+                            .heart-icon {
+                                #heart-solid {
+                                    fill: #e33469;
+                                }
+                            }
+                        }
+                        @include small {
+                            white-space: normal;
+                            border: none;
+                            padding: none;
+                        }
+                        cursor: pointer;
+                        .heart-icon {
+                            margin-right: 6px;
+                        }
+                        .wishlist-title {
+                            display: none;
+                            @include small {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+            .right-cont {
+                height: 210px;
+                width: 100%;
+                background: rgb(240,62,121);
+                background: linear-gradient(140deg, rgba(240,62,121,1) 0%, rgba(225,51,104,1) 36%, rgba(166,8,34,1) 100%);
+                position: relative;
+                @include small {
+                height: 315px;
+                }
+                @include medium {
+                height: 100%;
+                width: 385px;
+                }
+                @include large {
+                width: 540px;
+                }
+                .logo-place {
+                    transform: scale(.7);
+                    position: absolute;
+                    top: -19px;
+                    left: -4px;
+                    @include small{
+                    transform: none;
+                        position: inherit;
+                        padding: 30px 35px;
+                        display: block;
+                        }
+                    }
+                .shoe-img {
+                    pointer-events: none;
+                    user-select: none;
+                    position: absolute;
+                    top: 203px;
+                    left: -167px;
+                    transition: 1s ease-in-out all;
+                    animation: 3s ease-in-out shoe-anim infinite;
+                    transform: scale(.4);
+                    @include small {
+                    transform: scale(.7);
+                    left: -37px;
+                    }
+                    @include medium {
+                        left: -187px;
+                    }
+                    @include large {
+                        transform: none;
+                        left: -127px;
+                    }
+                }
+                .shadow {
+                    pointer-events: none;
+                    user-select: none;
+                    width: 100%;
+                    margin-top: 132px;
+                    position: relative;
+                    overflow: hidden;
+                    height: 120px;
+                    @include small {
+                    margin-top: -26px;
+                    }
+                    @include medium {
+                    margin-top: 265px;
+                    }
+                    .shadow-img {
+                        transform: translateX(-50%) scale(.5);
+                        position: absolute;
+                        left: 49%;
+                        mix-blend-mode: overlay;
+                        @include small {
+                        transform: translateX(-50%) scale(.7);
+                        left: 45%;
+                        }
+                        @include medium {
+                            transform: translateX(-50%);
+                            left: 42%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// animation --------
+@keyframes shoe-anim {
+    0% {
+        top: -75px;
+    }
+    50% {
+        top: -70px;
+    }
+    100% {
+        top: -75px;
+    }
+}
+@include small {
+    @keyframes shoe-anim {
+        0% {
+            top: -33px;
+        }
+        50% {
+            top: -25px;
+        }
+        100% {
+            top: -33px;
+        }
+    }
+}
+@include medium {
+    @keyframes shoe-anim {
+        0% {
+            top:273px;
+        }
+        50% {
+            top:265px;
+        }
+        100% {
+            top:273px;
+        }
+    }
+}
+@include large {
+    @keyframes shoe-anim {
+        0% {
+            top:190px;
+        }
+        50% {
+            top:180px;
+        }
+        100% {
+            top:190px;
+        }
+    }    
+}
+
+// animation --------
